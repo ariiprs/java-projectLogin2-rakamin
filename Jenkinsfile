@@ -9,7 +9,7 @@ pipeline {
     stages {
       stage('Trigger build in openshift') {
        steps {
-         sh "Oc start-build ${BUILD_NAME} --from-dir=. --follow -n ${PROJECT_NAME}"}
+         sh "oc start-build ${BUILD_NAME} --from-dir=. --follow -n ${PROJECT_NAME}"}
        }
 
 
