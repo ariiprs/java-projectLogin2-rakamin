@@ -7,6 +7,9 @@ spec:
     matchLabels:
       app: springboot-app
   template:
+    metadata:
+      labels:
+        app: springboot-app
     spec:
       containers:
         - name: springboot-app
@@ -25,3 +28,10 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+          volumeMounts:
+            - name: app-storage
+              mountPath: /data     # 👈 This is the path inside the container
+      volumes:
+        - name: app-storage
+          persistentVolumeClaim:
+            claimName: my-storage-claim-master  # 👈 Must match the PVC name you created
