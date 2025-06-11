@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-
+#this is automatically triggered
 jobs:
   trigger-build:
     runs-on: ubuntu-latest
@@ -26,3 +26,5 @@ jobs:
       - name: Start OpenShift build
         run: |
           oc start-build ${{ secrets.OC_BUILD_NAME }} -n ${{ secrets.OC_NAMESPACE }} --wait --follow
+          
+          
