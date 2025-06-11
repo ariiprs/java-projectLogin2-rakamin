@@ -5,6 +5,7 @@ on:
     branches:
       - master
 #this is automatically triggered
+#new commits
 jobs:
   trigger-build:
     runs-on: ubuntu-latest
