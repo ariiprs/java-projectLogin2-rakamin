@@ -28,6 +28,17 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+
+          #set resources
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+            limits:
+              cpu: 500m
+              memory: 1Gi
+          #end of resources
+
           volumeMounts:
             - name: app-storage
               mountPath: /data     # 👈 This is the path inside the container
