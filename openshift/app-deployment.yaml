@@ -39,6 +39,8 @@ spec:
               memory: 1Gi
           #end of resources
 
+
+# Add a Persistent Volume Claim (PVC) for storage
           volumeMounts:
             - name: app-storage
               mountPath: /data     # 👈 This is the path inside the container
